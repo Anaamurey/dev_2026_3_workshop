@@ -160,7 +160,16 @@ class Conversion:
         }
         total = 0
         prev_value = 0
-        for char in reversed(romano)
+        for char in reversed(romano):
+            if char not in valores:
+                raise ValueError("Numero romano invalido")
+            value = valores [char]
+            if value < prev_value:
+                total -= value
+            else:
+                total += value
+                prev_value = value
+                return total
     
     def texto_a_morse(self, texto):
         """
@@ -176,7 +185,26 @@ class Conversion:
             texto_a_morse("SOS") -> "... --- ..."
             texto_a_morse("HELLO") -> ".... . .-.. .-.. ---"
         """
-        pass
+        morse_dict = {
+            'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 
+            'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 
+            'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 
+            'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 
+            'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 
+            'Y': '-.--', 'Z': '--..',
+            '0': '-----', '1': '.----', '2': '..---', 
+            '3': '...--', '4': '....-', '5': '.....', 
+            '6': '-....', '7': '--...', 
+            '8': '---..', '9': '----.'
+        }
+        texto = texto.upper()
+        morse = []
+        for char in texto:
+            if char in morse_dict:
+                morse.append(morse_dict[char])
+            else:
+                raise ValueError(f"Caracter no soportado: {char}")
+        return " ".join(morse)
     
     def morse_a_texto(self, morse):
         """
