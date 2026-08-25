@@ -108,7 +108,10 @@ class Conversion:
             binario_a_decimal("1010") -> 10
             binario_a_decimal("11111111") -> 255
         """
-        pass
+        try:
+            return int(binario, 2)
+        except ValueError:
+            raise ValueError("El numero binario debe ser una cadena de 0s y 1s")
     
     def decimal_a_romano(self, numero):
         """
