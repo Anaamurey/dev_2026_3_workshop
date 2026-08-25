@@ -139,7 +139,7 @@ class Conversion:
             while numero >= valor: 
                 resultado += simbolo
                 numero -= valor 
-        return resultado  
+        return resultado   
     
     def romano_a_decimal(self, romano):
         """
@@ -155,7 +155,12 @@ class Conversion:
             romano_a_decimal("IX") -> 9
             romano_a_decimal("MCMXCIV") -> 1994
         """
-        pass
+        valores = {
+            "I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000
+        }
+        total = 0
+        prev_value = 0
+        for char in reversed(romano)
     
     def texto_a_morse(self, texto):
         """
