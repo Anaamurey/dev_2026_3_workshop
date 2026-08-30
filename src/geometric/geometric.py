@@ -1,4 +1,7 @@
 class Geometria:
+    import math
+    math.sqrt()
+    math.pi()
     """
     Class with geometric exercises.
     Include basic and funny operations in 2D and 3D.
@@ -28,7 +31,7 @@ class Geometria:
         Returns:
             float: Perímetro del rectángulo
         """
-        pass
+        return 2*(base + altura)
     
     def area_circulo(self, radio):
         """
