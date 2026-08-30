@@ -65,9 +65,10 @@ class Data:
             list: Lista combinada y ordenada
         """
         lista_combinada = []
-        i = j = 0
-        while i < len(lista1)and j < len(lista2):
-            if lista1[i]< lista2[j]:
+        i = 0
+        j = 0
+        while i < len(lista1) and j < len(lista2):
+            if lista1[i] < lista2[j]:
                 lista_combinada.append(lista1[i])
                 i +=1
             else: 
