@@ -47,8 +47,12 @@ class Data:
         Returns:
             list: Lista sin elementos duplicados
         """
-        pass
-    
+        lista_sin_duplicados = []
+        for elemento in lista:
+                    if elemento not in lista_sin_duplicados: 
+                        lista_sin_duplicados.append(elemento)
+                    return lista_sin_duplicados 
+
     def merge_ordenado(self, lista1, lista2):
         """
         Combina dos listas ordenadas en una sola lista ordenada.
@@ -60,8 +64,25 @@ class Data:
         Returns:
             list: Lista combinada y ordenada
         """
-        pass
-    
+        lista_combinada = []
+        i = j = 0
+        while i < len(lista1)and j < len(lista2):
+            if lista1[i]< lista2[j]:
+                lista_combinada.append(lista1[i])
+                i +=1
+            else: 
+                lista_combinada.append(lista2[j])
+                j +=1
+                while i < len(lista1):
+                    lista_combinada.append(lista1[i])
+                    i +=1
+                    while j < len(lista2):
+                        lista_combinada.append(lista2[j])
+                        j +=1
+                        return lista_combinada 
+                    
+                        
+                
     def rotar_lista(self, lista, k):
         """
         Rota los elementos de una lista k posiciones a la derecha.
