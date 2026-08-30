@@ -1,3 +1,6 @@
+from cmath import sqrt
+
+
 class Formulas:
     """
     Clase con ejercicios de fórmulas de física, finanzas y álgebra.
@@ -270,4 +273,4 @@ class Formulas:
         Ejemplo:
             hipotenusa_pitagoras(3, 4) -> 5.0
         """
-        pass
+        return sqrt(cateto1**2 + cateto2**2) 
