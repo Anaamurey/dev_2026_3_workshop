@@ -38,7 +38,17 @@ class Games:
         Returns:
             str: "correcto", "muy alto" o "muy bajo"
         """
-        pass
+      
+
+        if jugador1 == jugador2:
+            return "empate"
+
+        if (jugador1 == "piedra" and jugador2 == "tijera") or \
+        (jugador1 == "tijera" and jugador2 == "papel") or \
+        (jugador1 == "papel" and jugador2 == "piedra"):
+            return "jugador1"
+
+        return "jugador2"
     
     def ta_te_ti_ganador(self, tablero):
         """
