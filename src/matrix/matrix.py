@@ -348,7 +348,16 @@ class Matrix:
             diagonal([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) -> [1, 5, 9]
             diagonal([[3, 0], [0, 7]]) -> [3, 7]
         """
-        pass
+        
+        if not self.es_cuadrada(matriz):
+            raise ValueError("La matriz debe ser cuadrada")
+
+        resultado = []
+
+        for i in range(len(matriz)):
+            resultado.append(matriz[i][i])
+
+        return resultado
 
     def es_diagonal(self, matriz):
         """
