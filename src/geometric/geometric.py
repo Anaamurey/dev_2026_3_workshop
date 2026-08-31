@@ -254,8 +254,8 @@ class Geometria:
         Returns:
             float: Área de la superficie del cilindro
         """
-        pass
-    
+        return (2 * math.pi *radio **2) + (2 * math.pi * radio * altura)
+
     def distancia_entre_puntos(self, x1, y1, x2, y2):
         """
         Calcula la distancia euclidiana entre dos puntos en un plano 2D.
