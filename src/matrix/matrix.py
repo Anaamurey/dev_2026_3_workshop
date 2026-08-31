@@ -422,4 +422,12 @@ class Matrix:
             buscar_en_matriz([[1, 2, 3], [4, 2, 6], [7, 8, 2]], 2) -> [(0, 1), (1, 1), (2, 2)]
             buscar_en_matriz([[1, 2], [3, 4]], 9) -> []
         """
-        pass
+    
+        posiciones = []
+
+        for i in range(len(matriz)):
+            for j in range(len(matriz[i])):
+                if matriz[i][j] == valor:
+                    posiciones.append((i, j))
+
+        return posiciones
