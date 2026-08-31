@@ -118,7 +118,7 @@ class Games:
             color = random.choice(colores_disponibles)
             combinacion.append(color)
 
-    return combinacion
+        return combinacion
     
     def validar_movimiento_torre_ajedrez(self, desde_fila, desde_col, hasta_fila, hasta_col, tablero):
         """
@@ -138,4 +138,34 @@ class Games:
             - La torre se mueve horizontal o verticalmente
             - No puede saltar sobre otras piezas
         """
-        pass
+  
+
+
+        if desde_fila == hasta_fila and desde_col == hasta_col:
+            return False
+
+        # La torre solo se mueve horizontal o verticalmente
+        if desde_fila != hasta_fila and desde_col != hasta_col:
+            return False
+
+        # Movimiento horizontal
+        if desde_fila == hasta_fila:
+
+            inicio = min(desde_col, hasta_col)
+            fin = max(desde_col, hasta_col)
+
+            for col in range(inicio + 1, fin):
+                if tablero[desde_fila][col] != " ":
+                    return False
+
+
+        else:
+
+            inicio = min(desde_fila, hasta_fila)
+            fin = max(desde_fila, hasta_fila)
+
+            for fila in range(inicio + 1, fin):
+                if tablero[fila][desde_col] != " ":
+                    return False
+
+        return True
