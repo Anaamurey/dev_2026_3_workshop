@@ -14,8 +14,11 @@ class Strings:
         Returns:
             bool: True si es palíndromo, False en caso contrario
         """
-        pass
-    
+      
+        texto_invertido = texto[::-1]
+
+        return texto == texto_invertido
+
     def invertir_cadena(self, texto):
         """
         Invierte una cadena de texto sin usar slicing ni reversed().
