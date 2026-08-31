@@ -88,8 +88,12 @@ class Strings:
         Returns:
             bool: True si son anagramas, False en caso contrario
         """
-        pass
-    
+        
+        texto1 = texto1.lower()
+        texto2 = texto2.lower()
+
+        return sorted(texto1) == sorted(texto2)
+        
     def contar_palabras(self, texto):
         """
         Cuenta el número de palabras en una cadena.
