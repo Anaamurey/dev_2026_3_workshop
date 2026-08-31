@@ -102,8 +102,14 @@ class Magic:
         Returns:
             bool: True si n es un número perfecto, False en caso contrario
         """
-        pass
-    
+        if n <= 1:
+            return False
+        suma = 0
+        for i in range(1, n):
+            if n % i == 0:
+                suma += i
+            return suma == n
+
     def triangulo_pascal(self, filas):
         """
         Genera las primeras n filas del triángulo de Pascal.
