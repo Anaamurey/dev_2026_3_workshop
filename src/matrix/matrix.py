@@ -148,7 +148,18 @@ class Matrix:
         Ejemplo:
             transpuesta([[1, 2, 3], [4, 5, 6]]) -> [[1, 4], [2, 5], [3, 6]]
         """
-        pass
+    
+        resultado = []
+
+        for j in range(len(matriz[0])):
+            fila = []
+
+            for i in range(len(matriz)):
+                fila.append(matriz[i][j])
+
+            resultado.append(fila)
+
+        return resultado
 
     def es_cuadrada(self, matriz):
         """
