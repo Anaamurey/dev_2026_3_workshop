@@ -123,7 +123,17 @@ class Matrix:
         Ejemplo:
             multiplicar_escalar([[1, 2], [3, 4]], 3) -> [[3, 6], [9, 12]]
         """
-        pass
+        resultado = []
+
+        for fila in matriz:
+            nueva_fila = []
+
+            for elemento in fila:
+                nueva_fila.append(elemento * escalar)
+
+            resultado.append(nueva_fila)
+
+        return resultado
 
     def transpuesta(self, matriz):
         """
