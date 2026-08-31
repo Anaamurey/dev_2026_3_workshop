@@ -104,8 +104,11 @@ class Strings:
         Returns:
             int: Número de palabras en la cadena
         """
-        pass
     
+        palabras = texto.split()
+
+        return len(palabras)
+        
     def palabras_mayus(self, texto):
         """
         Pon en Mayuscula la primera letra de cada palabra en una cadena.
