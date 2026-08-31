@@ -60,19 +60,19 @@ class Stats:
         
         frecuencias = {}
 
-        for numero in numeros:
-            if numero in frecuencias:
-                frecuencias[numero] += 1
+        for num in numeros:
+            if num in frecuencias:
+                frecuencias[num] += 1
             else:
-                frecuencias[numero] = 1
+                frecuencias[num] = 1
 
         mayor_frecuencia = 0
         moda = numeros[0]
 
-        for numero in numeros:
-            if frecuencias[numero] > mayor_frecuencia:
-                mayor_frecuencia = frecuencias[numero]
-                moda = numero
+        for num in numeros:
+            if frecuencias[num] > mayor_frecuencia:
+                mayor_frecuencia = frecuencias[num]
+                moda = num
 
         return moda
         
