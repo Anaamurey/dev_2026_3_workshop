@@ -374,7 +374,16 @@ class Matrix:
             es_diagonal([[3, 0], [0, 7]]) -> True
             es_diagonal([[1, 2], [0, 4]]) -> False
         """
-        pass
+    
+        if not self.es_cuadrada(matriz):
+            return False
+
+        for i in range(len(matriz)):
+            for j in range(len(matriz)):
+                if i != j and matriz[i][j] != 0:
+                    return False
+
+        return True
 
     def rotar_90(self, matriz):
         """
