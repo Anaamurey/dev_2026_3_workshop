@@ -192,7 +192,16 @@ class Matrix:
             es_simetrica([[1, 2, 3], [2, 5, 6], [3, 6, 9]]) -> True
             es_simetrica([[1, 2], [3, 4]]) -> False
         """
-        pass
+   
+        if not self.es_cuadrada(matriz):
+            return False
+
+        for i in range(len(matriz)):
+            for j in range(len(matriz)):
+                if matriz[i][j] != matriz[j][i]:
+                    return False
+
+        return True 
 
     def traza(self, matriz):
         """
