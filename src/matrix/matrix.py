@@ -399,8 +399,13 @@ class Matrix:
             rotar_90([[1, 2], [3, 4]]) -> [[3, 1], [4, 2]]
             rotar_90([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) -> [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
         """
-        pass
+        
+        transpuesta = self.transpuesta(matriz)
 
+        for fila in transpuesta:
+            fila.reverse()
+
+        return transpuesta
     def buscar_en_matriz(self, matriz, valor):
         """
         Busca un valor en la matriz y retorna todas las posiciones donde se encuentra.
