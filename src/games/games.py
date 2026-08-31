@@ -1,3 +1,4 @@
+import random
 class Games:
     def piedra_papel_tijera(self, jugador1, jugador2):
         """
@@ -109,7 +110,15 @@ class Games:
             generar_combinacion_mastermind(4, ["rojo", "azul", "verde"]) 
             -> ["rojo", "azul", "rojo", "verde"]
         """
-        pass
+       
+
+        combinacion = []
+
+        for i in range(longitud):
+            color = random.choice(colores_disponibles)
+            combinacion.append(color)
+
+    return combinacion
     
     def validar_movimiento_torre_ajedrez(self, desde_fila, desde_col, hasta_fila, hasta_col, tablero):
         """
