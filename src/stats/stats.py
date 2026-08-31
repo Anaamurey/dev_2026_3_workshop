@@ -32,8 +32,17 @@ class Stats:
             mediana([1, 2, 3, 4, 5]) -> 3.0
             mediana([1, 2, 3, 4]) -> 2.5
         """
-        pass
-    
+       
+        ordenados = sorted(numeros)
+        cantidad = len(ordenados)
+
+        mitad = cantidad // 2
+
+        if cantidad % 2 == 0:
+            return (ordenados[mitad - 1] + ordenados[mitad]) / 2
+        else:
+            return ordenados[mitad]
+        
     def moda(self, numeros):
         """
         Encuentra el valor que aparece con mayor frecuencia en la lista.
@@ -48,8 +57,25 @@ class Stats:
         Ejemplo:
             moda([1, 2, 2, 3, 3, 3]) -> 3
         """
-        pass
-    
+        
+        frecuencias = {}
+
+        for numero in numeros:
+            if numero in frecuencias:
+                frecuencias[numero] += 1
+            else:
+                frecuencias[numero] = 1
+
+        mayor_frecuencia = 0
+        moda = numeros[0]
+
+        for numero in numeros:
+            if frecuencias[numero] > mayor_frecuencia:
+                mayor_frecuencia = frecuencias[numero]
+                moda = numero
+
+        return moda
+        
     def desviacion_estandar(self, numeros):
         """
         Calcula la desviación estándar de una lista de números.
