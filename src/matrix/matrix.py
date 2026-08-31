@@ -277,7 +277,28 @@ class Matrix:
             determinante_3x3([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) -> 0
             determinante_3x3([[1, 0, 0], [0, 2, 0], [0, 0, 3]]) -> 6
         """
-        pass
+    
+        if len(matriz) != 3:
+            raise ValueError("La matriz debe ser 3x3")
+
+        for fila in matriz:
+            if len(fila) != 3:
+                raise ValueError("La matriz debe ser 3x3")
+
+        a = matriz[0][0]
+        b = matriz[0][1]
+        c = matriz[0][2]
+
+        d = matriz[1][0]
+        e = matriz[1][1]
+        f = matriz[1][2]
+
+        g = matriz[2][0]
+        h = matriz[2][1]
+        i = matriz[2][2]
+
+        return (a * e * i + b * f * g + c * d * h
+                - c * e * g - b * d * i - a * f * h)
 
     def identidad(self, n):
         """
